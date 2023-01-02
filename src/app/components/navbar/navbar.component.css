@@ -1,0 +1,47 @@
+::ng-deep .navbar .p-menuitem-text {
+  font-weight: bolder;
+}
+
+::ng-deep .navbar .p-menuitem{
+  position: relative;
+  display: inline-block;
+
+}
+
+::ng-deep .navbar .p-menuitem::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 4px;
+  scale: 0 1;
+  transform-origin: left;
+  transition: scale 0.25s;
+  margin-top: 2px;
+}
+
+::ng-deep .navbar .p-menuitem:hover::before{
+  scale: 1;
+}
+
+.p-button-secondary{
+  /* left: 65vw; */
+  /* margin-left: 950px; */
+  /* border-radius: 8px; */
+  /* border: 1px solid grey; */
+  color: white !important;
+  transition: .5s;
+  height: 45px;
+}
+
+.p-button-secondary:hover{
+  transform: scale(1.05);
+  transition: .5s;
+}
+
+.p-button-secondary i{
+  margin-right: 10px;
+}

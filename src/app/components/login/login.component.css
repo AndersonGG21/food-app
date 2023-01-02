@@ -1,0 +1,72 @@
+small{
+  display: block;
+}
+
+.container{
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  border-radius: 8px;
+  background: #080606;
+  animation-name: color;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  width: 700px;
+}
+
+@keyframes color {
+  0%{
+    box-shadow: none;
+  }
+  50%{
+    box-shadow:  12px 12px 24px #1f1b1b,
+             -12px -12px 24px #1f1b1b;
+  }
+  100%{
+    box-shadow: none;
+  }
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.sign-up{
+  width: 100%;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center  ;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 50px;
+}
+
+.sign-up span{
+  width: 250px;
+}
+
+input,
+::ng-deep .p-password{
+  background-color: inherit;
+}
+
+.p-button-secondary{
+  background-color: inherit;
+  transition: .5s;
+  height: 45px;
+}
+

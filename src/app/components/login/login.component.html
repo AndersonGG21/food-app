@@ -1,0 +1,33 @@
+
+<div class="container">
+  <form action="">
+    <h2>Sign Up</h2>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input type="text" id="inputtext" pInputText [(ngModel)]="name">
+        <label for="inputtext">Name</label>
+      </span>
+    </div>
+    <br>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input type="email" id="inputtext" pInputText [(ngModel)]="email">
+        <label for="inputtext">Email</label>
+      </span>
+    </div>
+    <br>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <p-password inputId="password" [(ngModel)]="password" [toggleMask]="true" inputStyleClass="p-password"></p-password>
+        <label for="password">Password</label>
+      </span>
+      <small id="password-help" class="block">At least 8 characterers.</small>
+    </div>
+    <br>
+    <button pButton pRipple type="button" label="Sign In" class="p-button-secondary" (click)="signIn()"></button>
+  </form>
+  <div class="sign-up">
+    <h1>Welcome Back!</h1>
+    <span>Enter your personal details and start your journey with us</span>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="navbar-c" data-aos="fade-down" data-aos-duration="2000">
+  <p-menubar [model]="items" styleClass="navbar" #menu>
+    <ng-template pTemplate="start">
+        <img src="assets/burgir.png" height="40" class="mr-2">
+    </ng-template>
+    <ng-template pTemplate="end">
+      <button pButton pRipple type="button" label="Logout" class="p-button-outlined p-button-secondary"><i class="pi pi-power-off"></i></button>
+    </ng-template>
+  </p-menubar>
+</div>
