@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from 'src/app/models/order.model';
 import { Product } from 'src/app/models/product.model';
 
 @Component({
@@ -10,8 +11,9 @@ export class PlaceOrderComponent implements OnInit{
 
   products: Product[] = [];
   delay: string = '100';
-  order: any[] = [];
+  order: Order[] = [];
   quantity: number = 0;
+  total: number = 0;
 
 
   ngOnInit(): void {
@@ -23,13 +25,14 @@ export class PlaceOrderComponent implements OnInit{
     ]
   };
 
-  addItem():void{
+  addItem(product:Product, quantity:number):void{
+    this.order.push(new Order(product,quantity));
+    this.total += product.price * quantity;
   }
 
-
-
-
-
-
+  cancelOrder(){
+    this.order = [];
+    this.total = 0;
+  }
 
 }

@@ -6,71 +6,34 @@
       <ng-template pTemplate="header">
           <img alt="Card" src={{product.urlImg}} height="150px" style="border-radius: 4px;">
       </ng-template>
+      <div class="field col-12 md:col-3">
+        <label for="horizontal">Quantity:</label>
+        <br>
+        <p-inputNumber [showButtons]="true" buttonLayout="horizontal" inputId="horizontal" spinnerMode="horizontal" [step]="1"
+        decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" inputStyleClass="inputNumber" #inputNumber>
+        </p-inputNumber>
+    </div>
       <ng-template pTemplate="footer">
-        <div class="field col-12 md:col-3">
-          <label for="horizontal">Horizontal with Step</label>
-          <p-inputNumber [(ngModel)]="quantity" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal" spinnerMode="horizontal" [step]="1"
-          decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" inputStyleClass="inputNumber">
-          </p-inputNumber>
-      </div>
+        <button pButton pRipple type="button" label="Add to order" class="p-button-outlined p-button-success" (click)="addItem(product, inputNumber.value)"></button>
       </ng-template>
     </p-card>
   </div>
   <div class="order-resume" data-aos="fade-left" data-aos-delay="1200">
     <h2>Your order:</h2>
-    <div class="product-card">
+    <div class="product-card" *ngFor="let item of order">
       <div class="product">
-        <img src="https://www.eltiempo.com/files/image_640_428/uploads/2019/06/11/5d00446556664.jpeg" alt="">
-        <h3>Burger</h3>
+        <img src={{item.product.urlImg}} alt="">
+        <h3>{{item.product.name}}</h3>
       </div>
       <div class="details">
-        <span class="price">Price: $500</span>
-        <p>Quantity: 2</p>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="product">
-        <img src="https://www.eltiempo.com/files/image_640_428/uploads/2019/06/11/5d00446556664.jpeg" alt="">
-        <h3>Burger</h3>
-      </div>
-      <div class="details">
-        <span class="price">Price: $500</span>
-        <p>Quantity: 2</p>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="product">
-        <img src="https://www.eltiempo.com/files/image_640_428/uploads/2019/06/11/5d00446556664.jpeg" alt="">
-        <h3>Burger</h3>
-      </div>
-      <div class="details">
-        <span class="price">Price: $500</span>
-        <p>Quantity: 2</p>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="product">
-        <img src="https://www.eltiempo.com/files/image_640_428/uploads/2019/06/11/5d00446556664.jpeg" alt="">
-        <h3>Burger</h3>
-      </div>
-      <div class="details">
-        <span class="price">Price: $500</span>
-        <p>Quantity: 2</p>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="product">
-        <img src="https://www.eltiempo.com/files/image_640_428/uploads/2019/06/11/5d00446556664.jpeg" alt="">
-        <h3>Burger</h3>
-      </div>
-      <div class="details">
-        <span class="price">Price: $500</span>
-        <p>Quantity: 2</p>
+        <span class="price">Price: {{item.product.price}}</span>
+        <p>{{item.quantity}}</p>
       </div>
     </div>
     <div class="footer">
+      <h3>Total: {{total}}</h3>
       <button pButton pRipple type="button" label="Submit" class="p-button-raised p-button-success"></button>
-      <button pButton pRipple type="button" label="Cancel" class="p-button-raised p-button-danger"></button>
+      <button pButton pRipple type="button" label="Cancel" class="p-button-raised p-button-danger" (click)="cancelOrder()"></button>
     </div>
   </div>
 
