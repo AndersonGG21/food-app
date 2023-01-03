@@ -1,0 +1,76 @@
+.main{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.card-container{
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+::ng-deep .p-card-shadow{
+  margin-bottom: 30px;
+}
+
+.order-resume{
+  margin-left: 20px;
+  background-color: inherit;
+  width: 500px;
+  min-height: 700px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.product-card{
+  width: 80%;
+  border: 1px solid gray;
+  border-radius: 8px;
+  background-color: inherit;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.product img{
+  width: 100px;
+  border-radius: 8px;
+}
+
+.p-button-raised{
+  background-color: inherit;
+  color: white;
+  display: inline;
+  margin-left: 10px;
+}
+
+.p-button-raised:hover{
+  color: white;
+  font-weight: bolder;
+}
+
+.footer{
+  margin-bottom: 10px;
+  gap: 20px;
+}
+
+::ng-deep .inputNumber{
+  width: 80px;
+  background-color: inherit;
+}
