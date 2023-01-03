@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InputNumber } from 'primeng/inputnumber';
 import { Order } from 'src/app/models/order.model';
 import { Product } from 'src/app/models/product.model';
 
@@ -22,6 +23,9 @@ export class PlaceOrderComponent implements OnInit{
       new Product('BBQ Ribs', 'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg', 700),
       new Product('BBQ Ribs', 'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg', 700),
       new Product('BBQ Ribs', 'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg', 700),
+      new Product('BBQ Ribs', 'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg', 700),
+      new Product('BBQ Ribs', 'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg', 700),
+      new Product('BBQ Ribs', 'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg', 700),
     ]
   };
 
@@ -34,5 +38,6 @@ export class PlaceOrderComponent implements OnInit{
     this.order = [];
     this.total = 0;
   }
+
 
 }

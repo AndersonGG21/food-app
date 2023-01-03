@@ -17,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
+import { NgOptimizedImage } from '@angular/common';
 
 
 const appRoutes: Routes = [
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
     PasswordModule,
     InputTextModule,
     RouterModule.forRoot(appRoutes),
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

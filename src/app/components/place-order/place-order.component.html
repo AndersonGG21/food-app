@@ -4,7 +4,7 @@
   <div class="card-container"  data-aos="zoom-out"  data-aos-delay="1000">
     <p-card header="{{product.name}}" subheader="${{product.price}}" [style]="{width: '300px'}" styleClass="p-card-shadow" *ngFor="let product of products, index as i">
       <ng-template pTemplate="header">
-          <img alt="Card" src={{product.urlImg}} height="150px" style="border-radius: 4px;">
+          <img alt="Card" ngSrc={{product.urlImg}} [width]='200' [height]="100" style="border-radius: 4px;">
       </ng-template>
       <div class="field col-12 md:col-3">
         <label for="horizontal">Quantity:</label>
@@ -26,14 +26,14 @@
         <h3>{{item.product.name}}</h3>
       </div>
       <div class="details">
-        <span class="price">Price: {{item.product.price}}</span>
-        <p>{{item.quantity}}</p>
+        <span class="price">Price: ${{item.product.price}}</span>
+        <p>Units: {{item.quantity}}</p>
       </div>
     </div>
     <div class="footer">
-      <h3>Total: {{total}}</h3>
-      <button pButton pRipple type="button" label="Submit" class="p-button-raised p-button-success"></button>
-      <button pButton pRipple type="button" label="Cancel" class="p-button-raised p-button-danger" (click)="cancelOrder()"></button>
+      <h3 *ngIf="total > 0">Total: ${{total}}</h3>
+      <button *ngIf="order.length > 0" pButton pRipple type="button" label="Submit" class="p-button-raised p-button-success"></button>
+      <button *ngIf="order.length > 0" pButton pRipple type="button" label="Cancel" class="p-button-raised p-button-danger" (click)="cancelOrder()"></button>
     </div>
   </div>
 

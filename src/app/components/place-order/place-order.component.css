@@ -1,32 +1,36 @@
 .main{
   display: flex;
   flex-direction: row;
-
+  justify-content: center;
 }
 
 .card-container{
-  width: 1000px;
+  width: 90%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-around; */
+  gap: 50px;
 }
 
 ::ng-deep .p-card-shadow{
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+  max-width: 275px;
 }
 
 .order-resume{
-  margin-left: 20px;
+  /* margin-left: 10px; */
   background-color: inherit;
   width: 500px;
-  min-height: 700px;
+  /* min-height: 200px; */
+  height: max-content;
   border: 1px solid grey;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .product-card{
@@ -73,4 +77,16 @@
 ::ng-deep .inputNumber{
   width: 80px;
   background-color: inherit;
+}
+
+@media (width < 600px) {
+
+  .main{
+    flex-wrap: wrap-reverse;
+  }
+
+  .order-resume{
+    margin-left: 0;
+    width: 85%;
+  }
 }
