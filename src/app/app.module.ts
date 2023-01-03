@@ -17,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
+import { InputNumberComponent } from './components/input-number/input-number.component';
 
 
 const appRoutes: Routes = [
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     LoginComponent,
     NavbarComponent,
     HomeComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,
