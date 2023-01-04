@@ -8,7 +8,9 @@ import {ButtonModule} from 'primeng/button';
 import {MenubarModule} from 'primeng/menubar';
 import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
-
+import {DataViewModule} from 'primeng/dataview';
+import {DropdownModule} from 'primeng/dropdown';
+import {RatingModule} from 'primeng/rating';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
 import { NgOptimizedImage } from '@angular/common';
+import { DataViewComponent } from './components/data-view/data-view.component';
 
 
 const appRoutes: Routes = [
@@ -34,6 +37,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     HomeComponent,
     PlaceOrderComponent,
+    DataViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,10 @@ const appRoutes: Routes = [
     PasswordModule,
     InputTextModule,
     RouterModule.forRoot(appRoutes),
-    NgOptimizedImage
+    NgOptimizedImage,
+    DataViewModule,
+    DropdownModule,
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
