@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <h1 data-aos="fade-right" data-aos-delay="800">Foods</h1>
 <div class="main">
-  <div class="card-container"  data-aos="zoom-out"  data-aos-delay="1000">
+<!-- <div class="card-container"  data-aos="zoom-out"  data-aos-delay="1000">
     <p-card header="{{product.name}}" subheader="${{product.price}}" [style]="{width: '300px'}" styleClass="p-card-shadow" *ngFor="let product of products, index as i">
       <ng-template pTemplate="header">
           <img alt="Card" ngSrc={{product.urlImg}} [width]='200' [height]="100" style="border-radius: 4px;">
@@ -35,7 +35,12 @@
       <button *ngIf="order.length > 0" pButton pRipple type="button" label="Submit" class="p-button-raised p-button-success"></button>
       <button *ngIf="order.length > 0" pButton pRipple type="button" label="Cancel" class="p-button-raised p-button-danger" (click)="cancelOrder()"></button>
     </div>
-  </div>
+  </div> -->
+
+<!-- DataView -->
+
 
 </div>
+
+<app-data-view></app-data-view>
 
