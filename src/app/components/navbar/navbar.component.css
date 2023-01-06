@@ -28,10 +28,6 @@
 }
 
 .p-button-secondary{
-  /* left: 65vw; */
-  /* margin-left: 950px; */
-  /* border-radius: 8px; */
-  /* border: 1px solid grey; */
   color: white !important;
   transition: .5s;
   height: 45px;
@@ -44,4 +40,10 @@
 
 .p-button-secondary i{
   margin-right: 10px;
+}
+
+@media (width < 560px) {
+  .navbar-c button{
+    left: 100vw;
+  }
 }
