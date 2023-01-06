@@ -45,7 +45,7 @@
               [cancel]="false"
             ></p-rating>
             <i class="pi pi-tag product-category-icon"></i
-            ><span class="product-category">{{ product.name }}</span>
+            ><span class="product-category">{{ product.category }}</span>
           </div>
           <div class="product-list-action">
             <span class="product-price">${{ product.price }}</span>
@@ -68,7 +68,7 @@
           <div class="product-grid-item-top">
             <div>
               <i class="pi pi-tag product-category-icon"></i>
-              <span class="product-category">{{ product.name }}</span>
+              <span class="product-category">{{ product.category }}</span>
             </div>
             <span
               [class]="'product-badge status-' + product.name.toLowerCase()"
@@ -109,11 +109,14 @@
               >
               </p-inputNumber>
               <button
+                data-aos="fade-right"
+                data-aos-duration="2000"
                 pButton
                 pRipple
                 type="button"
                 label="Submit"
-                class="p-button-outlined p-button-success"
+                class="p-button-outlined p-button-success btn"
+                *ngIf="inputNumber.value != null"
                 (click)="addItem(product, inputNumber.value)"
               ></button>
             </div>

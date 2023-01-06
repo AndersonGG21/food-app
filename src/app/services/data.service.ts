@@ -11,37 +11,44 @@ export class DataService {
     new Product(
       'Burger',
       'https://www.eltiempo.com/files/image_640_428/uploads/2019/06/11/5d00446556664.jpeg',
-      500
+      500,
+      'Fast Food'
     ),
     new Product(
       'BBQ Ribs',
       'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-      700
+      700,
+      'Food'
     ),
     new Product(
       'BBQ Ribs',
       'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-      700
+      700,
+      'Food'
     ),
     new Product(
       'BBQ Ribs',
       'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-      700
+      700,
+      'Food'
     ),
     new Product(
       'BBQ Ribs',
       'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-      700
+      700,
+      'Food'
     ),
     new Product(
       'BBQ Ribs',
       'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-      700
+      700,
+      'Food'
     ),
     new Product(
       'BBQ Ribs',
       'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-      700
+      700,
+      'Food'
     ),
   ];
 

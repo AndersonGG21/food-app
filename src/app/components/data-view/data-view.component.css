@@ -103,10 +103,14 @@
 }
 
 :host ::ng-deep .product-grid-item-bottom{
-  /* background-color: aliceblue; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 10px;
+}
+
+
+:host ::ng-deep .product-grid-item-bottom .btn{
   margin: 10px;
 }
 
