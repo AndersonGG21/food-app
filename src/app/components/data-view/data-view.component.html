@@ -66,6 +66,7 @@
                 class="p-button-outlined p-button-success btn"
                 [disabled]="inputNumber.value == null"
                 (click)="addItem(product, inputNumber.value)"
+                (click)="inputNumber.value = 0"
               ></button>
           </div>
         </div>

@@ -1,7 +1,8 @@
 .main{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
+  min-width: 90%;
 }
 
 .card-container{
@@ -66,14 +67,15 @@
 }
 
 
-@media (width < 600px) {
+@media screen and (max-width: 1100px) {
 
   .main{
     flex-wrap: wrap-reverse;
   }
-
   .order-resume{
     margin-left: 0;
-    width: 85%;
+    /* position: absolute; */
+    min-width: 800px;
   }
+
 }

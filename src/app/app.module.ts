@@ -22,7 +22,6 @@ import { PlaceOrderComponent } from './components/place-order/place-order.compon
 import { NgOptimizedImage } from '@angular/common';
 import { DataViewComponent } from './components/data-view/data-view.component';
 
-
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},

@@ -79,4 +79,10 @@ export class DataService {
     this.total += product.price * quantity;
     console.log(this.total);
   }
+
+  cancelOrder(): Order[] {
+    this.order = [];
+    this.total = 0;
+    return this.order;
+  }
 }
