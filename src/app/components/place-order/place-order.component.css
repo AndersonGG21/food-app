@@ -9,26 +9,17 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
   gap: 50px;
 }
 
-::ng-deep .p-card-shadow{
-  /* margin-bottom: 30px; */
-  max-width: 275px;
-}
-
 .order-resume{
-  /* margin-left: 10px; */
   background-color: inherit;
   width: 500px;
-  /* min-height: 200px; */
   height: max-content;
   border: 1px solid grey;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   margin-bottom: 15px;
 }

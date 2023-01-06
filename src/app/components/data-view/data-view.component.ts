@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Data } from '@angular/router';
 import { SelectItem } from 'primeng/api';
 import { Product } from 'src/app/models/product.model';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-data-view',
@@ -15,46 +17,15 @@ export class DataViewComponent implements OnInit{
     {label: 'Oldest First', value: 'price'}
   ];
   sortOrder: number = 0;
+  quantity: number = 0;
   sortField: string = '';
+  total: number = 0;
+  @Output() newItemEvent = new EventEmitter<number>();
+
+  constructor(private dataService: DataService){}
 
   ngOnInit(): void {
-    this.products = [
-      new Product(
-        'Burger',
-        'https://www.eltiempo.com/files/image_640_428/uploads/2019/06/11/5d00446556664.jpeg',
-        500
-      ),
-      new Product(
-        'BBQ Ribs',
-        'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-        700
-      ),
-      new Product(
-        'BBQ Ribs',
-        'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-        700
-      ),
-      new Product(
-        'BBQ Ribs',
-        'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-        700
-      ),
-      new Product(
-        'BBQ Ribs',
-        'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-        700
-      ),
-      new Product(
-        'BBQ Ribs',
-        'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-        700
-      ),
-      new Product(
-        'BBQ Ribs',
-        'https://www.tasteefulrecipes.com/wp-content/uploads/2019/06/BBQ-Ribs-Plantain-Fries-1.jpg',
-        700
-      ),
-    ];
+    this.products = this.dataService.getProducts();
   }
 
   onSortChange(event:any) {
@@ -68,6 +39,16 @@ export class DataViewComponent implements OnInit{
         this.sortOrder = 1;
         this.sortField = value;
     }
+  }
+
+  addItem(product: Product, quantity: number):void{
+    this.dataService.addItem(product,quantity);
+    this.total = this.dataService.getTotal();
+    this.getTotal();
+  }
+
+  getTotal():void{
+    this.newItemEvent.emit(this.total);
   }
 
 }

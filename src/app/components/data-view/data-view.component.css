@@ -1,35 +1,40 @@
-:root{
-  --bg-color : #080606;
+:root {
+  --bg-color: #080606;
 }
 
-.card{
-  width: 60%;
+.card {
+  width: 80%;
 }
 
-:host ::ng-deep .p-dataview{
+:host ::ng-deep .p-dataview {
   background-color: var(--bg-color);
 }
 
-:host ::ng-deep .p-dataview-grid .grid{
+:host ::ng-deep .p-dataview {
+  background-color: var(--bg-color);
+  min-width: 900px
+}
+
+:host ::ng-deep .p-dataview-grid .grid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-:host ::ng-deep  .p-dataview-content{
+:host ::ng-deep .p-dataview-content {
   background-color: var(--bg-color);
 }
 
-:host ::ng-deep .p-dataview-header{
+:host ::ng-deep .p-dataview-header {
   background-color: var(--bg-color);
 }
 
-:host ::ng-deep .p-paginator-bottom{
-  background-color: var(--bg-color) ;
+:host ::ng-deep .p-paginator-bottom {
+  background-color: var(--bg-color);
 }
 
-.header{
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -90,11 +95,21 @@
   width: 350px;
   border-radius: 8px;
 }
-:host ::ng-deep .product-grid-item .product-grid-item-top, :host ::ng-deep .product-grid-item .product-grid-item-bottom {
+:host ::ng-deep .product-grid-item .product-grid-item-top,
+:host ::ng-deep .product-grid-item .product-grid-item-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+:host ::ng-deep .product-grid-item-bottom{
+  /* background-color: aliceblue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+
 :host ::ng-deep .product-grid-item img {
   width: 150px;
   height: 150px;
@@ -109,31 +124,30 @@
   font-weight: 600;
 }
 
-
 @media screen and (max-width: 576px) {
   :host ::ng-deep .product-list-item {
     flex-direction: column;
     align-items: center;
- }
+  }
   :host ::ng-deep .product-list-item img {
     width: 75%;
     margin: 2rem 0;
- }
+  }
   :host ::ng-deep .product-list-item .product-list-detail {
     text-align: center;
- }
+  }
   :host ::ng-deep .product-list-item .product-price {
     align-self: center;
- }
+  }
   :host ::ng-deep .product-list-item .product-list-action {
     display: flex;
     flex-direction: column;
- }
+  }
   :host ::ng-deep .product-list-item .product-list-action {
     margin-top: 2rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
- }
+  }
 }
