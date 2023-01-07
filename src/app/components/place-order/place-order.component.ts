@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { SelectItem } from 'primeng/api';
 import { InputNumber } from 'primeng/inputnumber';
 import { Order } from 'src/app/models/order.model';
@@ -22,7 +23,7 @@ export class PlaceOrderComponent implements OnInit {
   sortKey: string = '';
   total: number= 0;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -45,5 +46,9 @@ export class PlaceOrderComponent implements OnInit {
   cancelOrder() {
     this.order = this.dataService.cancelOrder();
     this.total = 0;
+  }
+
+  sendOrder(): void {
+    this.router.navigate(['/orders']);
   }
 }

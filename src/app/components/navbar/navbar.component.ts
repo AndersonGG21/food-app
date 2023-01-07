@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -10,19 +11,24 @@ export class NavbarComponent implements OnInit{
 
   items: MenuItem[] = [];
 
+  constructor(private router: Router){};
+
   ngOnInit(): void {
     this.items = [
       {
         label: 'Home',
-        icon: 'pi pi-fw pi-home'
+        icon: 'pi pi-fw pi-home',
+        routerLink: '/home'
       },
       {
         label: 'Place an order',
-        icon: 'pi pi-fw pi-pencil'
+        icon: 'pi pi-fw pi-pencil',
+        routerLink: '/place-order'
       },
       {
         label: 'Orders',
-        icon: 'pi pi-fw pi-list'
+        icon: 'pi pi-fw pi-list',
+        routerLink: '/orders'
       },
       // {
       //   label:'Quit',

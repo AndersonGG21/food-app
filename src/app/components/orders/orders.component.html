@@ -1,1 +1,11 @@
-<p>orders works!</p>
+<app-navbar></app-navbar>
+<main>
+  <section>
+    <h1>List of orders</h1>
+    <aside>
+      <div class="orders-conatainer" *ngFor="let order of orders">
+        {{order.product.name}}
+      </div>
+    </aside>
+  </section>
+</main>

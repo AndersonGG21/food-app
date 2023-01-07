@@ -7,6 +7,7 @@ import { Product } from '../models/product.model';
 })
 
 export class DataService {
+
   products: Product[] = [
     new Product(
       'Burger',
@@ -77,7 +78,6 @@ export class DataService {
   addItem(product: Product, quantity: number): void {
     this.order.push(new Order(product, quantity));
     this.total += product.price * quantity;
-    console.log(this.total);
   }
 
   cancelOrder(): Order[] {

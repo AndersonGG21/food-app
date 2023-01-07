@@ -18,7 +18,7 @@
     </div>
     <div class="footer">
       <h3>Total: ${{total}}</h3>
-      <button *ngIf="order.length > 0" pButton pRipple type="button" label="Submit" class="p-button-raised p-button-success"></button>
+      <button *ngIf="order.length > 0" pButton pRipple type="button" label="Submit" class="p-button-raised p-button-success" (click)="sendOrder()"></button>
       <button *ngIf="order.length > 0" pButton pRipple type="button" label="Cancel" class="p-button-raised p-button-danger" (click)="cancelOrder()"></button>
     </div>
   </div>
