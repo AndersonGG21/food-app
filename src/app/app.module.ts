@@ -21,6 +21,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
 import { NgOptimizedImage } from '@angular/common';
 import { DataViewComponent } from './components/data-view/data-view.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
     HomeComponent,
     PlaceOrderComponent,
     DataViewComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,
