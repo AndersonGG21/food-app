@@ -1,0 +1,20 @@
+:host ::ng-deep .p-card {
+  max-width: 80%;
+  background: #080606;
+  box-shadow: -10px -10px 20px #070505, 10px 10px 20px #090707;
+  font-weight: bold;
+  border: 1px solid gray;
+  margin: 0 auto 20px auto;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "."
+    "."
+    ".";
+}
