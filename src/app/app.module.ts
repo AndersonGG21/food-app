@@ -12,6 +12,7 @@ import {DataViewModule} from 'primeng/dataview';
 import {DropdownModule} from 'primeng/dropdown';
 import {RatingModule} from 'primeng/rating';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {AccordionModule} from 'primeng/accordion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,7 +59,8 @@ const appRoutes: Routes = [
     DataViewModule,
     DropdownModule,
     RatingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
