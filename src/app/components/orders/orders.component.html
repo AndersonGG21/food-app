@@ -3,14 +3,11 @@
   <section>
     <h1 class="fs-1">List of orders</h1>
     <div class="card-container">
-      <p-card *ngFor="let order of orders">
-        <ng-template pTemplate="header">
-          <span class="product-title">{{order.product.name}}</span>
-        </ng-template>
-        <ng-template pTemplate="footer">
-          <p-button label="Submit" icon="pi pi-check" styleClass="p-button-sm"></p-button>
-        </ng-template>
-      </p-card>
+      <p-accordion>
+        <p-accordionTab header="Order #{{i+1}}" *ngFor="let item of orders index as i">
+           {{item.product.name}}
+        </p-accordionTab>
+    </p-accordion>
     </div>
 
   </section>
