@@ -11,7 +11,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DataViewModule} from 'primeng/dataview';
 import {DropdownModule} from 'primeng/dropdown';
 import {RatingModule} from 'primeng/rating';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,7 +57,8 @@ const appRoutes: Routes = [
     NgOptimizedImage,
     DataViewModule,
     DropdownModule,
-    RatingModule
+    RatingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
