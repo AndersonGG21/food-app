@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Order } from 'src/app/models/order.model';
+import { Product } from 'src/app/models/product.model';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -9,11 +10,11 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./orders.component.css'],
 })
 export class OrdersComponent implements OnInit {
-  orders: Order[] = [];
+  orderProducts: Product[] = [];
 
   constructor(private dataServive: DataService) {}
 
   ngOnInit(): void {
-    this.orders = this.dataServive.getOrder();
+    this.orderProducts = this.dataServive.getProducts();
   }
 }

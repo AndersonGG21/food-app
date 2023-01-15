@@ -15,7 +15,7 @@ import { DataViewComponent } from '../data-view/data-view.component';
 export class PlaceOrderComponent implements OnInit {
   products: Product[] = [];
   delay: string = '100';
-  order: Order[] = this.dataService.getOrder();
+  orderProducts: Product[] = [];
   quantity: number = 0;
   sortOptions: SelectItem[] = [];
   sortOrder: number = 0;
@@ -25,7 +25,10 @@ export class PlaceOrderComponent implements OnInit {
 
   constructor(private dataService: DataService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.orderProducts = this.dataService.getOrderP();
+    console.log(this.dataService.getOrder().getDate())
+  }
 
   onSortChange(event: any) {
     let value = event.value;
@@ -44,11 +47,15 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   cancelOrder() {
-    this.order = this.dataService.cancelOrder();
+    // this.order = this.dataService.cancelOrder();
     this.total = 0;
   }
 
   sendOrder(): void {
     this.router.navigate(['/orders']);
   }
+
+  // getOrderProducts(): Product[] {
+  //   return this.dataService.getOrderP();
+  // }
 }
