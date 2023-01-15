@@ -17,10 +17,6 @@ export class PlaceOrderComponent implements OnInit {
   delay: string = '100';
   orderProducts: Product[] = [];
   quantity: number = 0;
-  sortOptions: SelectItem[] = [];
-  sortOrder: number = 0;
-  sortField: string = '';
-  sortKey: string = '';
   total: number= 0;
 
   constructor(private dataService: DataService, private router: Router) {}
@@ -28,18 +24,6 @@ export class PlaceOrderComponent implements OnInit {
   ngOnInit(): void {
     this.orderProducts = this.dataService.getOrderP();
     console.log(this.dataService.getOrder().getDate())
-  }
-
-  onSortChange(event: any) {
-    let value = event.value;
-
-    if (value.indexOf('!') === 0) {
-      this.sortOrder = -1;
-      this.sortField = value.substring(1, value.length);
-    } else {
-      this.sortOrder = 1;
-      this.sortField = value;
-    }
   }
 
   setTotal(total: number){
