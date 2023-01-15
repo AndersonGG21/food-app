@@ -1,11 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { SelectItem } from 'primeng/api';
-import { InputNumber } from 'primeng/inputnumber';
-import { Order } from 'src/app/models/order.model';
 import { Product } from 'src/app/models/product.model';
 import { DataService } from 'src/app/services/data.service';
-import { DataViewComponent } from '../data-view/data-view.component';
+
 
 @Component({
   selector: 'app-place-order',
@@ -38,8 +35,4 @@ export class PlaceOrderComponent implements OnInit {
   sendOrder(): void {
     this.router.navigate(['/orders']);
   }
-
-  // getOrderProducts(): Product[] {
-  //   return this.dataService.getOrderP();
-  // }
 }
