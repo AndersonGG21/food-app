@@ -1,11 +1,19 @@
 import { Product } from "./product.model";
 
 export class Order{
-  public product: Product = new Product('','',0,'');
-  public quantity: number = 0;
+  public date!: Date;
+  public products: Product[] = [];
 
-  constructor(product:Product, quantity:number){
-    this.product = product;
-    this.quantity = quantity;
+  constructor(products: Product[]){
+    this.products = products;
+  }
+
+  getProducts(): Product[]{
+    return this.products;
+  }
+
+  getDate(): number{
+    const date = new Date();
+    return date.getDay();
   }
 }

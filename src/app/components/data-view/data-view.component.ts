@@ -42,7 +42,8 @@ export class DataViewComponent implements OnInit{
   }
 
   addItem(product: Product, quantity: number):void{
-    this.dataService.addItem(product,quantity);
+    product.quantity = quantity;
+    this.dataService.addItem(product);
     this.total = this.dataService.getTotal();
     this.getTotal();
   }

@@ -4,16 +4,16 @@
     <h1 class="fs-1">List of orders</h1>
     <div class="card-container">
       <p-accordion>
-        <p-accordionTab header="Product #{{i+1}}" *ngFor="let item of orders index as i">
+        <p-accordionTab header="Product #{{i+1}}" *ngFor="let item of orderProducts index as i">
           <p-card>
             <div class="card-body">
-              <img src="{{item.product.urlImg}}" alt="{{item.product.name}}-img" width="150px" height="150px">
+              <img src="{{item.urlImg}}" alt="{{item.name}}-img" width="150px" height="150px">
               <div class="card-body-info">
-                <h1>{{item.product.name}}</h1>
+                <h1>{{item.name}}</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur beatae natus quibusdam obcaecati possimus, facere quisquam ut vero veritatis, quo doloribus voluptas dolorum? Soluta dolor quibusdam deserunt perspiciatis possimus.</p>
               </div>
               <div class="price">
-                <span>{{item.quantity}}x ${{item.product.price}}</span>
+                <span>{{item.quantity}}x ${{item.price}}</span>
               </div>
             </div>
           </p-card>
