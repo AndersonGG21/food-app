@@ -87,8 +87,17 @@ export class DataService {
   }
 
   addItem(product: Product): void {
-    this.order.products.push(product);
-    this.total += product.price * product.quantity;
+    const temp = this.order.products.find( p => p.name == product.name);
+
+    if (temp != null) {
+      temp.quantity += product.quantity;
+      this.total += product.price * product.quantity;
+    }else{
+      this.order.products.push(product);
+      this.total += product.price * product.quantity;
+    }
+
+
   }
 
   cancelOrder(): void {

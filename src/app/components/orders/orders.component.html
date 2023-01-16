@@ -4,8 +4,8 @@
     <h1 class="fs-1">List of orders</h1>
     <div class="card-container">
       <p-accordion>
-        <p-accordionTab header="Product #{{i+1}}" *ngFor="let item of orderProducts index as i">
-          <p-card>
+        <p-accordionTab header="Product">
+          <p-card *ngFor="let item of orderProducts index as i">
             <div class="card-body">
               <img src="{{item.urlImg}}" alt="{{item.name}}-img" width="150px" height="150px">
               <div class="card-body-info">
