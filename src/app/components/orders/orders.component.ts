@@ -15,6 +15,6 @@ export class OrdersComponent implements OnInit {
   constructor(private dataServive: DataService) {}
 
   ngOnInit(): void {
-    this.orderProducts = this.dataServive.getProducts();
+    this.orderProducts = this.dataServive.getOrderP();
   }
 }
