@@ -90,14 +90,12 @@ export class DataService {
     const temp = this.order.products.find( p => p.name == product.name);
 
     if (temp != null) {
-      temp.quantity += product.quantity;
-      this.total += product.price * product.quantity;
+      temp.quantity = product.quantity;
     }else{
       this.order.products.push(product);
-      this.total += product.price * product.quantity;
     }
 
-
+    this.total += product.price;
   }
 
   cancelOrder(): void {
