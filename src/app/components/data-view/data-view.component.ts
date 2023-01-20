@@ -43,17 +43,10 @@ export class DataViewComponent implements OnInit{
 
   addItem(product: Product, quantity: number):void{
 
-    const temp = this.dataService.order.products.find( (p) => p.name == product.name);
-    console.log(temp)
-    if (temp != null) {
-      product.quantity += quantity;
-    }else{
-      product.quantity = quantity;
-      this.dataService.addItem(product);
-    }
-
-    this.total = this.dataService.getTotal();
-    this.getTotal();
+    // this.products.push(product);
+    // product.quantity = quantity;
+    this.dataService.addItem(product, quantity);
+    // this.getTotal();
   }
 
   getTotal():void{

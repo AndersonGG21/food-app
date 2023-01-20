@@ -64,6 +64,7 @@ export class DataService {
   total: number = 0;
 
 
+
   constructor() {}
 
   getProducts(): Product[] {
@@ -86,15 +87,14 @@ export class DataService {
     this.products.push(product);
   }
 
-  addItem(product: Product): void {
-    const temp = this.order.getProducts().find( p => p.name == product.name);
-
-    if (temp != null) {
-      temp.quantity += product.quantity;
-      this.total = product.price * product.quantity;
+  addItem(product: Product, number: number): void {
+    if (this.order.getProducts().find(p => p.name == product.name)) {
+      const index = this.order.getProducts().findIndex(p => p.name == product.name);
+      this.order.getProducts()[index].quantity += number;
     }else{
-      this.order.products.push(product);
-      this.total = product.price * product.quantity;
+      product.quantity = number;
+      this.order.getProducts().push(product);
+      console.info("Inserted")
     }
   }
 

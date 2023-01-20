@@ -20,7 +20,7 @@ export class PlaceOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.orderProducts = this.dataService.getOrderP();
-    console.log(this.dataService.getOrder().getDate())
+    // console.log(this.dataService.getOrder().getDate())
   }
 
   setTotal(total: number){
