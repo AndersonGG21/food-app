@@ -5,9 +5,7 @@ import { Product } from '../models/product.model';
 @Injectable({
   providedIn: 'root',
 })
-
 export class DataService {
-
   products: Product[] = [
     new Product(
       'Burger',
@@ -60,10 +58,8 @@ export class DataService {
     ),
   ];
 
-  order: Order = new Order([new Product('Null', 'NUll', 0, 'null',0)]);
+  order: Order = new Order([new Product('Null', 'NUll', 0, 'null', 0)]);
   total: number = 0;
-
-
 
   constructor() {}
 
@@ -71,18 +67,18 @@ export class DataService {
     return this.products;
   }
 
-  getOrder(): Order{
+  getOrder(): Order {
     return this.order;
   }
 
-  getOrderP(): Product[]{
+  getOrderP(): Product[] {
     return this.order.getProducts();
   }
 
-  getTotal(): number{
-    this.order.getProducts().forEach(p => {
-      this.total = p.price * p.quantity;
-    });
+  getTotal(): number {
+    // this.order.getProducts().forEach(p => {
+    //   this.total += p.price * p.quantity;
+    // });
 
     return this.total;
   }
@@ -92,14 +88,18 @@ export class DataService {
   }
 
   addItem(product: Product, number: number): void {
-    if (this.order.getProducts().find(p => p.name == product.name)) {
-      const index = this.order.getProducts().findIndex(p => p.name == product.name);
+    if (this.order.getProducts().find((p) => p.name == product.name)) {
+      const index = this.order
+        .getProducts()
+        .findIndex((p) => p.name == product.name);
       this.order.getProducts()[index].quantity += number;
-    }else{
+    } else {
       product.quantity = number;
       this.order.getProducts().push(product);
-      console.info("Inserted")
     }
+
+    this.total += product.price * number;
+    console.log(this.total)
   }
 
   cancelOrder(): void {
