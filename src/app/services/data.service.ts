@@ -80,6 +80,10 @@ export class DataService {
   }
 
   getTotal(): number{
+    this.order.getProducts().forEach(p => {
+      this.total = p.price * p.quantity;
+    });
+
     return this.total;
   }
 
