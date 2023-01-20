@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Data } from '@angular/router';
 import { SelectItem } from 'primeng/api';
 import { Product } from 'src/app/models/product.model';
 import { DataService } from 'src/app/services/data.service';
