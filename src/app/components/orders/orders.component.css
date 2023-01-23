@@ -55,3 +55,7 @@
 .price span{
   font-size: 30px;
 }
+
+:host ::ng-deep .p-card{
+  background-color: inherit;
+}
