@@ -1,22 +1,12 @@
-/* :host ::ng-deep .p-card {
-  max-width: 80%;
-  background: #080606;
-  box-shadow: -10px -10px 20px #070505, 10px 10px 20px #090707;
-  font-weight: bold;
-  border: 1px solid gray;
-  margin: 0 auto 20px auto;
-} */
-
+:host ::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+  background-color: inherit;
+}
 
 :host ::ng-deep .p-accordion-content{
   background-color: inherit;
 }
 
 :host ::ng-deep .p-accordion-header .p-accordion-header-link{
-  background-color: inherit;
-}
-
-:host ::ng-deep .p-accordion-header .p-accordion-header-link:target{
   background-color: inherit;
 }
 
@@ -31,6 +21,7 @@
     "."
     ".";
 }
+
 .card-body{
   display: flex;
   gap: 50px;
