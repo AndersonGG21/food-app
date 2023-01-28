@@ -27,6 +27,7 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   cancelOrder() {
+    this.orderProducts = [];
     this.total = 0;
   }
 

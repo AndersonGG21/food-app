@@ -76,10 +76,6 @@ export class DataService {
   }
 
   getTotal(): number {
-    // this.order.getProducts().forEach(p => {
-    //   this.total += p.price * p.quantity;
-    // });
-
     return this.total;
   }
 
@@ -103,7 +99,7 @@ export class DataService {
   }
 
   cancelOrder(): void {
-    // this.order = [];
+    this.order.products = [];
     this.total = 0;
     // return this.order;
   }
