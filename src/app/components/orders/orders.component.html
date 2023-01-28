@@ -29,9 +29,12 @@
                 </div>
               </div>
             </p-card>
+            <button [disabled]="!(orderProducts.length > 1)" pButton pRipple type="button" label="Accept" class="p-button-raised p-button-success"></button>
+            <button [disabled]="!(orderProducts.length > 1)" pButton pRipple type="button" label="Decline" class="p-button-raised p-button-danger"></button>
           </ng-container>
         </p-accordionTab>
       </p-accordion>
     </div>
   </section>
 </main>
+

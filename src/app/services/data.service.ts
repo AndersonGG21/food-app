@@ -93,9 +93,7 @@ export class DataService {
       product.quantity = number;
       this.order.getProducts().push(product);
     }
-
     this.total += product.price * number;
-    console.log(this.total)
   }
 
   cancelOrder(): void {
