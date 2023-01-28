@@ -6,16 +6,18 @@
   </div>
   <div class="order-resume" data-aos="fade-left" data-aos-delay="1200">
     <h2>Your order:</h2>
-    <div class="product-card" *ngFor="let item of orderProducts">
-      <div class="product" *ngIf="item.name != 'Null'">
-        <img src={{item.urlImg}} alt="">
-        <h3>{{item.name}}</h3>
+    <ng-container *ngFor="let item of orderProducts">
+      <div class="product-card" *ngIf="item.name != 'Null'">
+        <div class="product">
+          <img src={{item.urlImg}} alt="">
+          <h3>{{item.name}}</h3>
+        </div>
+        <div class="details">
+          <span class="price">Price: ${{item.price}}</span>
+          <p>Units: {{item.quantity}}</p>
+        </div>
       </div>
-      <div class="details" *ngIf="item.name != 'Null'">
-        <span class="price">Price: ${{item.price}}</span>
-        <p>Units: {{item.quantity}}</p>
-      </div>
-    </div>
+    </ng-container>
     <div class="footer">
       <h3>Total: ${{total}}</h3>
       <button pButton pRipple type="button" label="Submit" class="p-button-raised p-button-success" (click)="sendOrder()"></button>
