@@ -24,10 +24,16 @@ export class PlaceOrderComponent implements OnInit {
 
   setTotal(total: number){
     this.total = total;
+
+    if (this.orderProducts.length == 0) {
+
+      this.orderProducts = this.dataService.getOrderP();
+    }
   }
 
   cancelOrder() {
     this.orderProducts = [];
+    this.dataService.cancelOrder();
     this.total = 0;
   }
 
