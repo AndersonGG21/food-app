@@ -22,7 +22,12 @@ export class OrdersComponent implements OnInit {
 
   refuseOrder() : void {
     this.order.setStatus();
-    this.messageService.add({key: 'tc' ,severity:'warining', summary: 'Warining', detail: 'The orde have been refused'});
+    this.messageService.add({key: 'tc' ,severity:'', summary: 'Warining', detail: 'The orde have been refused'});
+    console.log(`Status: ${this.order.getStatus()}`);
+  }
+
+  acceptOrder(): void {
+    this.messageService.add({key: 'tc' ,severity:'', summary: 'Success', detail: 'The orde have been accepted 😊'});
     console.log(`Status: ${this.order.getStatus()}`);
   }
 }

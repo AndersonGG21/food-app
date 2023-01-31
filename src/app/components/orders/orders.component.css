@@ -55,7 +55,7 @@
   background-color: inherit;
 }
 
-:host ::ng-deep .p-toast {
+:host ::ng-deep .p-toast{
   border: solid rgb(185, 228, 30);
   border-width: 0 0 0 6px;
   color: white;
