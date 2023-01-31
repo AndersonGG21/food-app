@@ -1,12 +1,16 @@
-:host ::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+:host
+  ::ng-deep
+  .p-accordion
+  .p-accordion-header:not(.p-disabled).p-highlight
+  .p-accordion-header-link {
   background-color: inherit;
 }
 
-:host ::ng-deep .p-accordion-content{
+:host ::ng-deep .p-accordion-content {
   background-color: inherit;
 }
 
-:host ::ng-deep .p-accordion-header .p-accordion-header-link{
+:host ::ng-deep .p-accordion-header .p-accordion-header-link {
   background-color: inherit;
 }
 
@@ -22,31 +26,41 @@
     ".";
 }
 
-.card-body{
+.card-body {
   display: flex;
   gap: 50px;
 }
 
-.card-body-info{
+.card-body-info {
   display: flex;
   flex-direction: column;
 }
 
-.card-body p{
+.card-body p {
   max-width: 75ch;
   color: lightgrey;
 }
 
-.price{
+.price {
   display: flex;
   align-items: center;
   margin-left: 400px;
 }
 
-.price span{
+.price span {
   font-size: 30px;
 }
 
-:host ::ng-deep .p-card{
+:host ::ng-deep .p-card {
   background-color: inherit;
+}
+
+:host ::ng-deep .p-toast {
+  border: solid rgb(185, 228, 30);
+  border-width: 0 0 0 6px;
+  color: white;
+}
+
+:host ::ng-deep .p-toast-icon-close {
+  color: white;
 }

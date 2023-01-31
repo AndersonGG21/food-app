@@ -13,6 +13,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {RatingModule} from 'primeng/rating';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {AccordionModule} from 'primeng/accordion';
+import {ToastModule} from 'primeng/toast';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -60,7 +61,8 @@ const appRoutes: Routes = [
     DropdownModule,
     RatingModule,
     BrowserAnimationsModule,
-    AccordionModule
+    AccordionModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
