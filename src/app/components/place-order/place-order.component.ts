@@ -15,6 +15,7 @@ export class PlaceOrderComponent implements OnInit {
   orderProducts: Product[] = [];
   quantity: number = 0;
   total: number= 0;
+  order = this.dataService.getOrder();
 
   constructor(private dataService: DataService, private router: Router) {}
 
