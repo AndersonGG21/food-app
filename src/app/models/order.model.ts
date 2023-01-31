@@ -18,8 +18,8 @@ export class Order{
     return date.getDay();
   }
 
-  setStatus(flag : boolean): void{
-    this.status = flag;
+  setStatus(): void{
+    this.status = false;
   }
 
   getStatus(): boolean {

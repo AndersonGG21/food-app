@@ -10,11 +10,17 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./orders.component.css'],
 })
 export class OrdersComponent implements OnInit {
+  order : Order = this.dataServive.getOrder();
   orderProducts: Product[] = [];
 
   constructor(private dataServive: DataService) {}
 
   ngOnInit(): void {
-    this.orderProducts = this.dataServive.getOrderP();
+    this.orderProducts = this.dataServive.order.getProducts();
+  }
+
+  refuseOrder() : void {
+    this.order.setStatus();
+    console.log(`Status: ${this.order.getStatus()}`);
   }
 }
