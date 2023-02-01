@@ -55,7 +55,6 @@
   background-color: inherit;
 }
 
-
 :host ::ng-deep .p-toast-icon-close {
   color: white;
 }
@@ -63,6 +62,11 @@
 .p-button-outlined,
 .p-button-success{
   margin: 10px;
+}
+
+.accordion-footer{
+  display: flex;
+  justify-content: center;
 }
 
 
