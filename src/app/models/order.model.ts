@@ -13,9 +13,9 @@ export class Order{
     return this.products;
   }
 
-  getDate(): number{
+  getDate(): Date{
     const date = new Date();
-    return date.getDay();
+    return date;
   }
 
   setStatus(): void{

@@ -4,7 +4,7 @@
     <h1 class="fs-1">List of orders</h1>
     <div class="card-container">
       <p-accordion>
-        <p-accordionTab header="See order">
+        <p-accordionTab header="{{order.getDate()}}">
           <ng-container *ngFor="let item of orderProducts; index as i">
             <p-card *ngIf="item.name != 'Null'">
               <div class="card-body">
