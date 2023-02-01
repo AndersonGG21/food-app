@@ -30,8 +30,22 @@
               </div>
             </p-card>
           </ng-container>
-          <button [disabled]="!(orderProducts.length > 1)" pButton pRipple type="button" label="Accept" class="p-button-raised p-button-success" (click)="acceptOrder()"></button>
-            <button [disabled]="!(orderProducts.length > 1)" pButton pRipple type="button" label="Decline" class="p-button-raised p-button-danger" (click)="refuseOrder()"></button>
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Success"
+            class="p-button-outlined p-button-success"
+            (click)="acceptOrder()"
+          ></button>
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Warning"
+            class="p-button-outlined p-button-warning"
+            (click)="refuseOrder()"
+          ></button>
         </p-accordionTab>
       </p-accordion>
     </div>
@@ -39,4 +53,3 @@
 </main>
 
 <p-toast position="top-center" key="tc"></p-toast>
-
