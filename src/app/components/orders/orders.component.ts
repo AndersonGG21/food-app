@@ -12,6 +12,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class OrdersComponent implements OnInit {
   order : Order = this.dataServive.getOrder();
+  orders: Order[] = this.dataServive.getOrders();
   orderProducts: Product[] = [];
 
   constructor(private dataServive: DataService, private messageService: MessageService) {}

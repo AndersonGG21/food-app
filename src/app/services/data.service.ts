@@ -58,7 +58,8 @@ export class DataService {
     ),
   ];
 
-  order: Order = new Order([new Product('Null', 'NUll', 0, 'null', 0)]);
+  order: Order = new Order();
+  oreders: Order[] = [];
   total: number = 0;
 
   constructor() {}
@@ -69,6 +70,10 @@ export class DataService {
 
   getOrder(): Order {
     return this.order;
+  }
+
+  getOrders(): Order[] {
+    return this.oreders;
   }
 
   getOrderP(): Product[] {
@@ -96,9 +101,14 @@ export class DataService {
     this.total += product.price * number;
   }
 
+  sendOrder(): void {
+    this.oreders.push(this.order);
+    this.order = new Order();
+    this.total = 0;
+  }
+
   cancelOrder(): void {
     this.order.products = [];
     this.total = 0;
-    // return this.order;
   }
 }

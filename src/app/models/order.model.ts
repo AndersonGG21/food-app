@@ -5,9 +5,11 @@ export class Order{
   public products: Product[] = [];
   public status: boolean = true;
 
-  constructor(products: Product[]){
-    this.products = products;
-  }
+  // constructor(products: Product[]){
+  //   this.products = products;
+  // }
+
+  constructor(){};
 
   getProducts(): Product[]{
     return this.products;
