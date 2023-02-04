@@ -5,10 +5,6 @@ export class Order{
   public products: Product[] = [];
   public status: boolean = false;
 
-  // constructor(products: Product[]){
-  //   this.products = products;
-  // }
-
   constructor(){this.date = new Date()};
 
   getProducts(): Product[]{

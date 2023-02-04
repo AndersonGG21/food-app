@@ -10,25 +10,26 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./orders.component.css'],
   providers:  [MessageService]
 })
-export class OrdersComponent implements OnInit {
-  order : Order = this.dataServive.getOrder();
-  orders: Order[] = this.dataServive.getOrders();
-  orderProducts: Product[] = [];
 
+export class OrdersComponent implements OnInit {
+  // order : Order = this.dataServive.getOrder();
+  orders: Order[] = this.dataServive.getOrders();
   constructor(private dataServive: DataService, private messageService: MessageService) {}
 
-  ngOnInit(): void {
-    this.orderProducts = this.dataServive.order.getProducts();
-  }
+  ngOnInit(): void {}
 
-  refuseOrder() : void {
-    this.order.setStatus();
+  refuseOrder(o : Order) : void {
+    this.removeOrder(o);
     this.messageService.add({key: 'tc' ,severity:'error', summary: 'Warning', detail: 'The order have been refused'});
-    this.orderProducts = [];
   }
 
-  acceptOrder(): void {
+  acceptOrder(o : Order): void {
+    this.removeOrder(o)
     this.messageService.add({key: 'tc' ,severity:'success', summary: 'Success', detail: 'The orde have been accepted 😊'});
-    this.orderProducts = [];
+  }
+
+  removeOrder(o: Order): void{
+    const index = this.orders.findIndex(order => order == o);
+    this.orders.splice(index,index + 1);
   }
 }
