@@ -4,51 +4,53 @@
     <h1 class="fs-1">List of orders</h1>
     <div class="card-container">
       <p-accordion>
-        <p-accordionTab header="{{order.getDate()}}" *ngFor="let order_i of orders">
-          <ng-container *ngFor="let item of order_i.getProducts(); index as i">
-            <p-card *ngIf="item.name != 'Null'">
-              <div class="card-body">
-                <img
-                  src="{{ item.urlImg }}"
-                  alt="{{ item.name }}-img"
-                  width="150px"
-                  height="150px"
-                />
-                <div class="card-body-info">
-                  <h1>{{ item.name }}</h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                    consectetur beatae natus quibusdam obcaecati possimus,
-                    facere quisquam ut vero veritatis, quo doloribus voluptas
-                    dolorum? Soluta dolor quibusdam deserunt perspiciatis
-                    possimus.
-                  </p>
+        <ng-container *ngFor="let order_i of orders">
+          <p-accordionTab header="{{order_i.getDate()}}">
+            <ng-container *ngFor="let item of order_i.getProducts(); index as i">
+              <p-card *ngIf="item.name != 'Null'">
+                <div class="card-body">
+                  <img
+                    src="{{ item.urlImg }}"
+                    alt="{{ item.name }}-img"
+                    width="150px"
+                    height="150px"
+                  />
+                  <div class="card-body-info">
+                    <h1>{{ item.name }}</h1>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                      consectetur beatae natus quibusdam obcaecati possimus,
+                      facere quisquam ut vero veritatis, quo doloribus voluptas
+                      dolorum? Soluta dolor quibusdam deserunt perspiciatis
+                      possimus.
+                    </p>
+                  </div>
+                  <div class="price">
+                    <span>{{ item.quantity }}x ${{ item.price }}</span>
+                  </div>
                 </div>
-                <div class="price">
-                  <span>{{ item.quantity }}x ${{ item.price }}</span>
-                </div>
-              </div>
-            </p-card>
-          </ng-container>
-          <div class="accordion-footer">
+              </p-card>
+            </ng-container>
+            <div class="accordion-footer">
+              <button
+              pButton
+              pRipple
+              type="button"
+              label="Success"
+              class="p-button-outlined p-button-success"
+              (click)="acceptOrder()"
+            ></button>
             <button
-            pButton
-            pRipple
-            type="button"
-            label="Success"
-            class="p-button-outlined p-button-success"
-            (click)="acceptOrder()"
-          ></button>
-          <button
-            pButton
-            pRipple
-            type="button"
-            label="Warning"
-            class="p-button-outlined p-button-warning"
-            (click)="refuseOrder()"
-          ></button>
-          </div>
-        </p-accordionTab>
+              pButton
+              pRipple
+              type="button"
+              label="Warning"
+              class="p-button-outlined p-button-warning"
+              (click)="refuseOrder()"
+            ></button>
+            </div>
+          </p-accordionTab>
+        </ng-container>
       </p-accordion>
     </div>
   </section>

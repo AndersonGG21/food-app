@@ -9,15 +9,14 @@ export class Order{
   //   this.products = products;
   // }
 
-  constructor(){};
+  constructor(){this.date = new Date()};
 
   getProducts(): Product[]{
     return this.products;
   }
 
-  getDate(): Date{
-    const date = new Date();
-    return date;
+  getDate(): string{
+    return this.date.toLocaleString();
   }
 
   setStatus(): void{
