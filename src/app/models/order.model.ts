@@ -3,7 +3,7 @@ import { Product } from "./product.model";
 export class Order{
   public date!: Date;
   public products: Product[] = [];
-  public status: boolean = true;
+  public status: boolean = false;
 
   // constructor(products: Product[]){
   //   this.products = products;
@@ -21,7 +21,7 @@ export class Order{
   }
 
   setStatus(): void{
-    this.status = false;
+    this.status = true;
   }
 
   getStatus(): boolean {
