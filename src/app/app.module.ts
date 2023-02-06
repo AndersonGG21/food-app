@@ -26,6 +26,7 @@ import { PlaceOrderComponent } from './components/place-order/place-order.compon
 import { NgOptimizedImage } from '@angular/common';
 import { DataViewComponent } from './components/data-view/data-view.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -64,7 +65,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     AccordionModule,
     ToastModule,
-    TooltipModule
+    TooltipModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
