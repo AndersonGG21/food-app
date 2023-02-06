@@ -12,7 +12,7 @@ export class FirebaseService {
 
   saveOrders(order : Order){
     const token = this.loginService.token;
-    this.httpClient.put('https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth='+token, order).subscribe(
+    this.httpClient.post('https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth='+token, order).subscribe(
       {complete: console.info}
     );
   }
