@@ -1,30 +1,30 @@
 
 <div class="container">
-  <form action="">
+  <form action="" #form="ngForm" (ngSubmit)="signIn(form)">
     <h2>Sign Up</h2>
     <div class="field col-12 md:col-4">
       <span class="p-float-label">
-        <input type="text" id="inputtext" pInputText [(ngModel)]="name">
+        <input type="text" id="inputtext" pInputText>
         <label for="inputtext">Name</label>
       </span>
     </div>
     <br>
     <div class="field col-12 md:col-4">
       <span class="p-float-label">
-        <input type="email" id="inputtext" pInputText [(ngModel)]="email">
+        <input type="email" inputId="email"  name="email" pInputText ngModel>
         <label for="inputtext">Email</label>
       </span>
     </div>
     <br>
     <div class="field col-12 md:col-4">
       <span class="p-float-label">
-        <p-password inputId="password" [(ngModel)]="password" [toggleMask]="true" inputStyleClass="p-password"></p-password>
+        <p-password inputId="password" inputStyleClass="p-password" name="password" ngModel></p-password>
         <label for="password">Password</label>
       </span>
       <small id="password-help" class="block">At least 8 characterers.</small>
     </div>
     <br>
-    <button pButton pRipple type="button" label="Sign In" class="p-button-secondary" (click)="signIn()"></button>
+    <button pButton pRipple type="submit" label="Sign In" class="p-button-secondary"></button>
   </form>
   <div class="sign-up">
     <h1>Welcome Back!</h1>

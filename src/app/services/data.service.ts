@@ -1,11 +1,13 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Order } from '../models/order.model';
 import { Product } from '../models/product.model';
+import { FirebaseService } from './firebase.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
+
   products: Product[] = [
     new Product(
       'Burger',
@@ -62,7 +64,7 @@ export class DataService {
   oreders: Order[] = [];
   total: number = 0;
 
-  constructor() {}
+  constructor(private fireb : FirebaseService) {}
 
   getProducts(): Product[] {
     return this.products;
@@ -103,6 +105,7 @@ export class DataService {
 
   sendOrder(): void {
     this.oreders.push(this.order);
+    this.fireb.saveOrders(this.order);
     this.order = new Order();
     this.total = 0;
   }
