@@ -1,8 +1,10 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem, MessageService } from 'primeng/api';
 import { Order } from 'src/app/models/order.model';
 import { Product } from 'src/app/models/product.model';
 import { DataService } from 'src/app/services/data.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-orders',
@@ -14,7 +16,7 @@ import { DataService } from 'src/app/services/data.service';
 export class OrdersComponent implements OnInit {
   // order : Order = this.dataServive.getOrder();
   orders: Order[] = this.dataServive.getOrders();
-  constructor(private dataServive: DataService, private messageService: MessageService) {}
+  constructor(private dataServive: DataService, private messageService: MessageService, private httpClient : FirebaseService) {}
 
   ngOnInit(): void {}
 
@@ -24,8 +26,11 @@ export class OrdersComponent implements OnInit {
   }
 
   acceptOrder(o : Order): void {
+    o.setStatus();
     this.removeOrder(o)
     this.messageService.add({key: 'tc' ,severity:'success', summary: 'Success', detail: 'The orde have been accepted 😊'});
+    const index = this.orders.findIndex(order => order == o);
+    this.httpClient.updateOrder(index, o);
   }
 
   removeOrder(o: Order): void{

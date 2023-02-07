@@ -16,4 +16,8 @@ export class FirebaseService {
       {complete: console.info}
     );
   }
+
+  updateOrder(index : number, order : Order){
+    this.httpClient.put(`https://clientsangular-89006-default-rtdb.firebaseio.com/orders/${index}.json`, order);
+  }
 }
