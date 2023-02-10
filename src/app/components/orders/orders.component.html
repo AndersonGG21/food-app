@@ -5,8 +5,8 @@
     <div class="card-container">
       <p-accordion>
         <ng-container *ngFor="let order_i of orders">
-          <p-accordionTab header="{{order_i.getDate()}}">
-            <ng-container *ngFor="let item of order_i.getProducts(); index as i">
+          <p-accordionTab header="{{order_i.date}}">
+            <ng-container *ngFor="let item of order_i.products; index as i">
               <p-card *ngIf="item.name != 'Null'">
                 <div class="card-body">
                   <img

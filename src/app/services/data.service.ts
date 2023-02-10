@@ -62,6 +62,7 @@ export class DataService {
 
   order: Order = new Order();
   oreders: Order[] = [];
+  orders: any;
   total: number = 0;
 
   constructor(private fireb : FirebaseService) {}
@@ -75,6 +76,9 @@ export class DataService {
   }
 
   getOrders(): Order[] {
+    this.fireb.getOrders().subscribe(response => {
+      this.oreders = Object.values(response);
+    })
     return this.oreders;
   }
 
@@ -105,7 +109,7 @@ export class DataService {
 
   sendOrder(): void {
     this.oreders.push(this.order);
-    this.fireb.saveOrders(this.order);
+    this.fireb.saveOrders(this.oreders);
     this.order = new Order();
     this.total = 0;
   }
