@@ -18,7 +18,9 @@ export class OrdersComponent implements OnInit {
   forder: any;
   constructor(private dataServive: DataService, private messageService: MessageService, private httpClient : FirebaseService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.orders = this.dataServive.getOrders();
+  }
 
   refuseOrder(o : Order) : void {
     this.removeOrder(o);

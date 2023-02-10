@@ -1,11 +1,11 @@
 import { Product } from "./product.model";
 
 export class Order{
-  public date!: Date;
+  public date!: string;
   public products: Product[] = [];
   public status: boolean = false;
 
-  constructor(){this.date = new Date()};
+  constructor(){this.date = new Date().toLocaleDateString()};
 
   getProducts(): Product[]{
     return this.products;

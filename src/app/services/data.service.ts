@@ -109,7 +109,8 @@ export class DataService {
 
   sendOrder(): void {
     this.oreders.push(this.order);
-    this.fireb.saveOrders(this.oreders);
+    console.log(this.order);
+    this.fireb.saveOrders(this.order);
     this.order = new Order();
     this.total = 0;
   }
