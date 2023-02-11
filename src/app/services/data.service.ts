@@ -115,8 +115,20 @@ export class DataService {
     this.total = 0;
   }
 
+  sendOrders(): void{
+    this.oreders.push(this.order);
+    console.log(this.order);
+    this.fireb.saveListOrder(this.oreders);
+    this.order = new Order();
+    this.total = 0;
+  }
+
   cancelOrder(): void {
     this.order.products = [];
     this.total = 0;
+  }
+
+  deleteOrder(index : number): void {
+    this.fireb.deleteOrder(index);
   }
 }

@@ -16,6 +16,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 export class OrdersComponent implements OnInit {
   orders: Order[] = this.dataServive.getOrders();
   forder: any;
+  newOrder : any;
   constructor(private dataServive: DataService, private messageService: MessageService, private httpClient : FirebaseService) {}
 
   ngOnInit(): void {
@@ -31,16 +32,18 @@ export class OrdersComponent implements OnInit {
     o.setStatus();
     this.removeOrder(o)
     this.messageService.add({key: 'tc' ,severity:'success', summary: 'Success', detail: 'The orde have been accepted 😊'});
-
-    this.httpClient.getOrders().subscribe(res =>{
-      this.forder = res;
-    });
-
-    console.log(this.forder);
   }
 
   removeOrder(o: Order): void{
     const index = this.orders.findIndex(order => order == o);
     this.orders.splice(index,index + 1);
+    this.dataServive.deleteOrder(index);
+
+    this.httpClient.updateOrder(index).subscribe(response => {
+      console.log(response);
+    })
+
+    console.log(index);
+    // console.log(this.newOrder);
   }
 }

@@ -13,7 +13,7 @@ export class FirebaseService {
 
 
   getOrders(){
-    return this.httpClient.get(`https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth=${this.token}`)
+    return this.httpClient.get<Order[]>(`https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth=${this.token}`)
   }
 
 
@@ -24,7 +24,22 @@ export class FirebaseService {
     );
   }
 
-  updateOrder(index : number, order : Order){
-    this.httpClient.put(`https://clientsangular-89006-default-rtdb.firebaseio.com/orders/${2}.json`, order);
+  saveListOrder(orders : Order[]){
+    const token = this.loginService.token;
+    this.httpClient.put('https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth='+token, orders).subscribe(
+      {complete: console.info}
+    );
+  }
+
+  updateOrder(index : number){
+    return this.httpClient.get(`https://clientsangular-89006-default-rtdb.firebaseio.com/orders/${index}.json?auth=${this.token}`);
+  }
+
+  deleteOrder(index : number){
+    this.httpClient.delete(`https://clientsangular-89006-default-rtdb.firebaseio.com/orders/${index}.json?auth=${this.token}`).subscribe({
+        complete: () => console.log('complete'),
+        error: (e) => console.error(e)
+      }
+    );
   }
 }

@@ -39,7 +39,8 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   sendOrder(): void {
-    this.dataService.sendOrder();
+    // this.dataService.sendOrder();
+    this.dataService.sendOrders();
     this.router.navigate(['/orders']);
   }
 }
