@@ -14,13 +14,14 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 
 export class OrdersComponent implements OnInit {
-  orders: Order[] = this.dataServive.getOrders();
+  orders: Order[] = [];
   forder: any;
   newOrder : any;
   constructor(private dataServive: DataService, private messageService: MessageService, private httpClient : FirebaseService) {}
 
   ngOnInit(): void {
-    // this.orders = this.dataServive.getOrders();
+    console.log("SI")
+    this.orders = this.dataServive.getOrders();
   }
 
   refuseOrder(o : Order) : void {

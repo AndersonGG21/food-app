@@ -13,7 +13,6 @@ export class FirebaseService {
 
 
   getOrders(){
-    console.log(this.token);
     return this.httpClient.get<Order[]>(`https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth=${this.token}`)
 
   }
