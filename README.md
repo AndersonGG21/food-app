@@ -22,6 +22,7 @@ contraseña: 140221
 - Diseño responsive
 - Utilización de un backend propio
 - Utilización de HTML semántico
+- Utilización de imagenes personalizadas
 - Entre otras
 
 Este proyecto fue realizado como un ejercicio de práctica y está abierto a cualquier mejora o sugerencia.
