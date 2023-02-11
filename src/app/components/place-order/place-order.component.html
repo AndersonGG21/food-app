@@ -25,18 +25,9 @@
         pButton
         pRipple
         type="button"
-        label="Submit"
-        class="p-button-raised p-button-success"
-        (click)="sendOrder()"
-      ></button>
-      <button
-        [disabled]="!(orderProducts.length > 0)"
-        pButton
-        pRipple
-        type="button"
-        label="Cancel"
+        label="Done"
         class="p-button-raised p-button-danger"
-        (click)="cancelOrder()"
+        (click)="finishOrder()"
       ></button>
     </div>
   </div>
