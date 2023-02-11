@@ -8,25 +8,25 @@ import { LoginService } from './login.service';
 })
 export class FirebaseService {
 
-  private token : string = this.loginService.token;
+  private token : string = this.loginService.getToken();
   constructor(private httpClient : HttpClient, private loginService : LoginService) { };
 
 
   getOrders(){
+    console.log(this.token);
     return this.httpClient.get<Order[]>(`https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth=${this.token}`)
+
   }
 
 
   saveOrders(order : Order){
-    const token = this.loginService.token;
-    this.httpClient.post('https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth='+token, order).subscribe(
+    this.httpClient.post('https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth='+this.token, order).subscribe(
       {complete: console.info}
     );
   }
 
   saveListOrder(orders : Order[]){
-    const token = this.loginService.token;
-    this.httpClient.put('https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth='+token, orders).subscribe(
+    this.httpClient.put('https://clientsangular-89006-default-rtdb.firebaseio.com/orders.json?auth='+this.token, orders).subscribe(
       {complete: console.info}
     );
   }

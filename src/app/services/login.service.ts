@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import { MessageService } from 'primeng/api';
+import { CookieService } from 'ngx-cookie-service/public-api';
 
 @Injectable({
   providedIn: 'root',
@@ -10,14 +10,16 @@ import { MessageService } from 'primeng/api';
 export class LoginService {
   token: string = '';
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private cookies : CookieService) { }
 
   login(email : string, password : string){
+    alert("Holaa");
     firebase.auth().signInWithEmailAndPassword(email, password).then(
       response => {
         firebase.auth().currentUser?.getIdToken().then(
           token => (
             this.token = token,
+            this.cookies.set("token",this.token),
             this.router.navigate(['/home'])
           )
         )
@@ -31,7 +33,12 @@ export class LoginService {
   logout(){
     firebase.auth().signOut().then(() => {
       this.token = "";
+      this.cookies.set("token", this.token);
       this.router.navigate(['/']);
     })
+  }
+
+  getToken(){
+    return this.cookies.get("token");
   }
 }

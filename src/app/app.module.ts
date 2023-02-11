@@ -28,6 +28,7 @@ import { DataViewComponent } from './components/data-view/data-view.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
+import { CookieService } from 'ngx-cookie-service';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -69,7 +70,7 @@ const appRoutes: Routes = [
     TooltipModule,
     HttpClientModule
   ],
-  providers: [MessageService],
+  providers: [MessageService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
