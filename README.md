@@ -1,27 +1,29 @@
 # FoodApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+# Página web para hacer y atender órdenes de un restaurante
 
-## Development server
+Este proyecto es una página web que permite hacer y atender las órdenes de los clientes. La página cuenta con 3 pantallas:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Home: Muestra información sobre el restaurante.
+2. Carta de productos: Muestra todos los productos de la carta y permite crear una orden.
+3. Órdenes: Muestra todas las órdenes que se han hecho para que el cocinero pueda atenderlas.
 
-## Code scaffolding
+El proyecto fue realizado con Angular y Firebase.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Acceso
 
-## Build
+Para acceder a la página web, utilice el siguiente usuario y contraseña:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+usuario: andersongarcesgarcia@gmail.com
+contraseña: 140221
 
-## Running unit tests
+## Mejoras posibles
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Diseño responsive
+- Utilización de un backend propio
+- Utilización de HTML semántico
+- Entre otras
 
-## Running end-to-end tests
+Este proyecto fue realizado como un ejercicio de práctica y está abierto a cualquier mejora o sugerencia.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
