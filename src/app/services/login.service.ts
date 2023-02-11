@@ -27,4 +27,11 @@ export class LoginService {
     });
 
   };
+
+  logout(){
+    firebase.auth().signOut().then(() => {
+      this.token = "";
+      this.router.navigate(['/']);
+    })
+  }
 }
