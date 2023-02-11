@@ -32,7 +32,7 @@ export class PlaceOrderComponent implements OnInit {
     }
   }
 
-  cancelOrder() {
+  finishOrder() {
     this.orderProducts = [];
     this.dataService.cancelOrder();
     this.total = 0;
