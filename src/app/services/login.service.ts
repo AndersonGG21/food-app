@@ -13,7 +13,6 @@ export class LoginService {
   constructor(private router : Router, private cookies : CookieService) { }
 
   login(email : string, password : string){
-    alert("Holaa");
     firebase.auth().signInWithEmailAndPassword(email, password).then(
       response => {
         firebase.auth().currentUser?.getIdToken().then(
