@@ -27,6 +27,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { DataViewComponent } from './components/data-view/data-view.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -68,7 +69,7 @@ const appRoutes: Routes = [
     TooltipModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
