@@ -22,6 +22,7 @@
     "aos": "^2.3.4",
     "firebase": "^9.17.1",
     "gsap": "^3.11.4",
+    "ngx-cookie-service": "^15.0.0",
     "primeicons": "^6.0.1",
     "primeng": "^14.2.3",
     "rxjs": "~7.5.0",
