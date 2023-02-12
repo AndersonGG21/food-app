@@ -11,7 +11,7 @@ import * as AOS from 'aos';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'food-app';
+  title = 'Food App';
   number:number = 10;
 
 
