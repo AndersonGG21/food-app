@@ -14,9 +14,9 @@ El proyecto fue realizado con Angular y Firebase.
 
 Para acceder a la página web, utilice el siguiente usuario y contraseña:
 
-url: https://clientsangular-89006.web.app
-usuario: andersongarcesgarcia@gmail.com
-contraseña: 140221
+- url: https://clientsangular-89006.web.app
+-
+-
 
 ## Mejoras posibles
 
